@@ -1,0 +1,26 @@
+<!--<input (change)="serach()"  ngModel="price" />-->
+<!--<input type="text" name="prix" [(ngModel)]="prix" />
+<table border="1">
+  <tr>
+    <td> Titre</td>
+    <td> Prix </td>
+    <td> nbr like </td>
+    <td> Quantities </td>
+    <td> Action </td>
+  </tr>
+  <tr *ngFor="let p of PRODUCTS">
+    <div  *ngIf="p.price > prix" >
+      <td>{{p.title}} </td>
+      <td>{{p.price}}</td>
+
+      <td>{{p.like }}</td>
+      <td> {{ p.quantity }}</td>
+      <td><button (click)="Addlike(p)">  Like </button> <button (click)="buy(p)" [disabled]="p.quantity<=0"> Buy</button> </td>
+    </div>
+  </tr>
+</table>
+-->
+<input type="text" name="prix" [(ngModel)]="prix" />
+<app-product *ngFor="let p of PRODUCTS;let i= index " [product]="p" [prix]="prix"
+    (incrementEvent)="incrementLike($event)" (incrementEvent2)="disincrementBuy($event)"
+></app-product>

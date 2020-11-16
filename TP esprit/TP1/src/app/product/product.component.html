@@ -1,0 +1,14 @@
+<p> app-works !!</p>
+
+<div  *ngIf="product.price > prix" >
+  <ul>
+  <li>{{product.title}} </li>
+  <li>{{product.price}}</li>
+
+  <li>{{product.like }}</li>
+  <li> {{ product.quantity }}</li>
+  <li><button (click)="sendNotif()">  Like </button>
+    <button (click)="sendNotifbuy()" [disabled]="product.quantity<=0"> Buy</button>
+  </li>
+  </ul>
+</div>
