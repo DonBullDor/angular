@@ -1,0 +1,18 @@
+<p>products works!</p>
+<app-form-product></app-form-product>
+{{ classe }} <br>
+
+<input type="text" name="prix" [(ngModel)]="prix">
+<!----<ul>
+    <div *ngFor="let p of products, let i=index">
+      <li *ngIf="p.price < prix">
+        {{ p.id }} *** {{ p.title }} ** price: {{ p.price }} ** quantity: {{ p.quantity }} ** like: {{ p.like }} ** {{ i }} 
+        <button [disabled]="p.quantity <= 0" (click)="buy(p)">buy</button>
+        <button [hidden]="show_like" (click)="like(i)">like</button>
+      </li>
+    </div> 
+</ul>----->
+
+<div class="row">
+<app-product *ngFor="let p of products, let i=index" [product]="p" (liked)="like($event)" (buyed)="buy($event)" ></app-product>
+</div>

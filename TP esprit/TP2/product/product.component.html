@@ -1,0 +1,19 @@
+<div class="col-md-3">
+    <div class="card" style="width: 18rem;">
+      <img src="../../assets/images/pull.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{product.title}} --- Price: {{product.price}} dt</h5>
+        <p class="card-text"> {{product.like}}</p>
+        <button class="btn btn-primary" (click)="addLike(product)" >
+          like <3
+        </button>
+        
+        <button class="btn btn-success" [disabled]="product.quantity==0"
+                 style="float: right" (click)="buy()" >
+          buy
+        </button>
+      </div >
+    </div>
+  </div>
+  
+

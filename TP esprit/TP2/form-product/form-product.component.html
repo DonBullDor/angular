@@ -1,0 +1,17 @@
+<form #f="ngForm">
+    Price : <input type="text" [(ngModel)]="product.price"  name="price" #price="ngModel"/> 
+    <br>
+    Id : <input type="text" [(ngModel)]="product.id" required name="id" #id="ngModel"/>
+    <div *ngIf="id.touched && id.invalid">Id Obligatoire</div>
+    <br>
+    Title : <input type="text" [(ngModel)]="product.title" required minlength="3"  name="title" #title="ngModel"/>
+    <div *ngIf="title.invalid">Title invalid</div>
+    <br>
+    Quantity : <input type="text" [(ngModel)]="product.quantity"  name="quantity" #quantity="ngModel"/>
+    <div *ngIf="quantity.value <= 0">Quantité doit être supérieur à 0</div>
+
+    <button [disabled]="f.invalid && quantity.value <= 0 ">save</button>
+</form>
+<div *ngIf="price.touched && price.invalid">
+    ***************Price obligatoire
+</div>

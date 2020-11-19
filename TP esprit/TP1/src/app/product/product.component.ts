@@ -2,7 +2,6 @@ import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 
 import {Product} from '../Data/Product';
 
-
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -14,16 +13,13 @@ export class ProductComponent implements OnInit {
   @Input() prix: number;
   @Output() incrementEvent = new EventEmitter<Product>();
   @Output() incrementEvent2 = new EventEmitter<Product>();
+
   constructor() {
   }
 
   // @ts-ignore
   ngOnInit(): void {
-
-
   }
-
-
 
   buy(p: Product): void {
   }

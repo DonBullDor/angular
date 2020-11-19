@@ -1,0 +1,12 @@
+<form #f="ngForm">
+  Id : <input [(ngModel)]="product.id" type="number" name="id" #id="ngModel" required/>
+  <div *ngIf="id.touched && id.invalid"> id obligatoire</div>
+  title : <input [(ngModel)]="product.title" type="text" name="title" #title="ngModel" required minlength="3"/>
+  <div *ngIf="title.invalid"> title obligatoire</div>
+  quantity : <input [(ngModel)]="product.quantity" type="number" name="quantity" #quantity="ngModel" required/>
+  <div *ngIf="quantity.value<=0"> quantite doit etre positive</div>
+  price : <input [(ngModel)]="product.price" type="number" name="price" #price="ngModel" required/>
+  <div *ngIf="price.value<=0"> price doit etre positive</div>
+  <button [disabled]="f.invalid" (click)="add()">Add</button>
+
+</form>
