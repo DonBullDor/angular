@@ -1,9 +1,15 @@
-<p>reactive-form-example works!</p>
-
 <form [formGroup]="formGoup">
-  id : <input type="text" formControlName="id"/> <br/>
-  title : <input type="text" formControlName="title"/> <br/>
-  prix : <input type="text" formControlName="price"/> <br/>
-  Quantity :<input type="text" formControlName="quantity"/> <br/>
+  id : <label>
+  <input type="text" formControlName="id"/>
+</label> <br/>
+  title : <label>
+  <input type="text" formControlName="title"/>
+</label> <br/>
+  prix : <label>
+  <input type="text" formControlName="price"/>
+</label> <br/>
+  Quantity :<label>
+  <input type="text" formControlName="quantity"/>
+</label> <br/>
   <button [disabled]="formGoup.invalid" (click)="add()"> add</button>
 </form>

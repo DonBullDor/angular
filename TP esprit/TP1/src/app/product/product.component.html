@@ -9,6 +9,7 @@
   <li> {{ product.quantity }}</li>
   <li><button (click)="sendNotif()">  Like </button>
     <button (click)="sendNotifbuy()" [disabled]="product.quantity<=0"> Buy</button>
+    <a   [routerLink]="['../DetailProduct/', product.id]" >details</a>
   </li>
   </ul>
 </div>
